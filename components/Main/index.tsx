@@ -13,7 +13,7 @@ const Main = () => {
   const userListTopics = data?.data?.userLists.split(",");
 
   return (
-    <div className="mx-32 mt-10 flex justify-center space-y-8">
+    <div className="mx-32 mt-10 flex justify-start space-y-8">
       <div className="">
         <FumbleLogo className="mb-10" />
         <div className="flex justify-start space-y-8 divide-y divide-gray-200 sm:space-y-5">
