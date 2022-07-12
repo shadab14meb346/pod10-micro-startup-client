@@ -5,7 +5,7 @@ import FumbleLogoFull from "../components/FumbleLogoFull";
 const Home: NextPage = () => {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="mt-10 flex justify-center">
         <FumbleLogoFull />
       </div>
       <Main />
