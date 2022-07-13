@@ -8,7 +8,7 @@ export default async function handler(
   if (req.method === "GET") {
     const username = req.query["username"];
     const userdetails = await axios.get(
-      `https://api.twitter.com/2/users/by/username/${username}?user.fields=profile_image_url`,
+      `https://api.twitter.com/2/users/by/username/${username}?user.fields=profile_image_url,description`,
       {
         headers: {
           Authorization:
@@ -73,6 +73,7 @@ export default async function handler(
         userLists: userListsText,
         profileImageUrl: profileImageUrl,
         name,
+        description: userdetails.data.data.description,
       },
     });
   }

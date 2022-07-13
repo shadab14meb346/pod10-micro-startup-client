@@ -10,7 +10,10 @@ const Main = () => {
   const topics = data?.data?.tweetKeywords?.result?.map(
     (item: any) => item?.text
   );
-  const userListTopics = data?.data?.userLists.split(",");
+  const userListTopics = data?.data?.userLists
+    .split(",")
+    .filter((item: string) => Boolean(item));
+  console.log(userListTopics);
 
   return (
     <div className="mx-32 mt-10 flex justify-start space-y-8">
@@ -24,7 +27,7 @@ const Main = () => {
                   htmlFor="company-website"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  The person you want to talk his/her twitter handle
+                  Twitter handle of the person you want to talk to
                 </label>
                 <div className="mt-1 flex rounded-md shadow-sm">
                   <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500 sm:text-sm">
@@ -81,9 +84,11 @@ const Main = () => {
         </div>
         {data && (
           <ListOfTopicsToTalk
-            topics={[...userListTopics, ...topics] as string[]}
+            topics={topics as string[]}
+            interests={userListTopics}
             name={data?.data?.name}
             profilePic={data?.data?.profileImageUrl}
+            description={data?.data?.description}
           />
         )}
       </div>
