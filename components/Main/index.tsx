@@ -7,9 +7,9 @@ const Main = () => {
   const [username, setUserName] = useState("");
   const { loading, data, error, fetchKeywords } = useKeywords();
 
-  const topics = data?.data?.tweetKeywords?.result?.map(
-    (item: any) => item?.text
-  );
+  const topics = data?.data?.tweetKeywords?.result
+    ?.map((item: any) => item?.text)
+    .filter((topic: string) => !topic.startsWith("RT"));
   const userListTopics = data?.data?.userLists
     .split(",")
     .filter((item: string) => Boolean(item));
