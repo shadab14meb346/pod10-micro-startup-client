@@ -56,12 +56,14 @@ export default async function handler(
       userListsText += `${userListsData[key]["name"]},`;
     }
 
+    const API_LAYER_KEY_1 = "U7jh7bCRgLBhBjrHB0xJ02XzeVcd4Q77";
+    const API_LAYER_KEY_2 = "4owm0FNKkXSjIXbNv5iGQwlyRvNLJvCw";
     const keywordResponse = await axios.post(
       "https://api.apilayer.com/keyword",
       tweetText,
       {
         headers: {
-          apikey: "4owm0FNKkXSjIXbNv5iGQwlyRvNLJvCw",
+          apikey: API_LAYER_KEY_1,
         },
       }
     );
