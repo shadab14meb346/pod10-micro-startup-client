@@ -46,7 +46,7 @@ const ListOfTopicsToTalk = ({
         {interests.length > 0 && (
           <>
             <h3 className="mt-4 text-lg font-medium leading-6 text-gray-900">
-              {name} interests
+              {name}'s interests
             </h3>
             <div className="mt-4  flex flex-wrap">
               {interests?.map((interest) => {
